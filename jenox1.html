@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+     <div class="logo-box">
+  <img src="logo.png" alt="Jenox Logo" class="logo-img">
+  <span class="logo-text">JenoxSite</span>
+</div>
+
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero-video" id="home">
+  <video autoplay muted loop playsinline>
+    <source src="game.mp4" type="video/mp4">
+    Your browser does not support video.
+  </video>
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h2>Welcome to JenoxSite</h2>
+    <p>Portolio of Royal Shilpakar Grade XII</p>
+    <button>Made for no reason</button>
+  </div>
+</section>
+
+<!-- About -->
+<section class="section about" id="about">
+  <h2>About Me</h2>
+
+  <div class="about-container">
+    <img src="jenx.jpg" alt="My Photo" class="profile-img">
+
+    <div class="about-text">
+      <p><strong>Name:</strong> Ramesh</p>
+      <p><strong>Location:</strong> Suryabinayak, Bhaktapur</p>
+      <p><strong>Profession:</strong> Student at SeaBird Int' College</p>
+      <p>
+        Hello! I am Royal. I love creating websites and learning new
+        technologies. Welcome to my personal site 🚀 (Portfolio).
+I love making websites and I have been designing and making websites since when I was a 9 yrs old kid. Making a website is like a lemon squizing material for me.
+If you like to contact then you can mail me. Thankyou!!
+
+      </p>
+    </div>
+  </div>
+</section>
+
+  <!-- Our Services -->
+  <section class="section services" id="services">
+    <h2>Our Services</h2>
+    <div class="cards">
+      <div class="card">Web designing</div>
+      <div class="card">Game development</div>
+      <div class="card">Video Editing</div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" id="contact">
+  <h2>Contact Now</h2>
+
+  <form id="contact-form">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Send</button>
+  </form>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+  const form = document.getElementById("contact-form");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_5lynmez",        // Service ID
+      "template_1ywtlt3",       // Template ID
+      form,
+      "olmEeLZx_OuukX_KQ"       // Public Key (IMPORTANT)
+    )
+    .then(() => {
+      alert("✅ Message sent successfully!");
+      form.reset();
+    })
+    .catch(error => {
+      console.error("EmailJS error:", error);
+      alert("❌ Failed to send message. Check console.");
+    });
+  });
+</script>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2026 Made By Jenox.</p>
+  </footer>
+
+<script>
+  document.querySelector('a[href="#about"]').addEventListener("click", function(e) {
+    e.preventDefault();
+    document.querySelector("#about").scrollIntoView({
+      behavior: "smooth"
+    });
+  });
+</script>
+
+</body>
+</html>
